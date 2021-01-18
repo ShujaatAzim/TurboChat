@@ -21,5 +21,6 @@ class MessagesController < ApplicationController
   def message_params
     arams.require(:message).permit(:content)
   end
+  
 
 end
