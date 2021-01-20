@@ -1,5 +1,7 @@
 class MessagesController < ApplicationController
 
+  before_action :set_room, only: %i[ new create ]
+
   def new
     @message = @room.messages.new
   end
@@ -19,8 +21,8 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    arams.require(:message).permit(:content)
+    params.require(:message).permit(:content)
   end
-  
+
 
 end
